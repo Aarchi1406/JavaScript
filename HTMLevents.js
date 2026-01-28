@@ -43,7 +43,7 @@ function showTime() {
 }
 
 //setTimeout() method
-const btn = document.getElementById("btn");
+const btn1 = document.getElementById("btn");
 
 btn.addEventListener("click", function () {
   setTimeout(showMsg, 2000);
