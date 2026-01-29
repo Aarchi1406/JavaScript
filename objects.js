@@ -59,3 +59,50 @@ let x = person1.fullName.call(person2);
 document.getElementById("demo").innerHTML = x; 
 // person1 has function and function2 has data so binding them will result in a function with data 
 
+//destructuring objects
+const person3 = {
+  firstName3: "John",
+  lastName3: "Doe",
+  age: 50,
+}
+ let {firstName3, lastName3, age} = person3;
+  console.log(firstName3, lastName3, age);
+//order of the property does not matter 
+
+//set default values while destructuring
+  const person4 = {
+    firstName4: "John",
+    lastName4: "Doe",
+  }
+
+  let {firstName4,lastName4, age: a = 25} = person4;
+  console.log(firstName4, lastName4, a);
+
+//object alias property 
+//giving different name to the property to avoid conflict 
+
+//skipping array elements is also possible with destructuring 
+
+
+//group by
+const fruits = [
+  {name:"apples", quantity:300},
+  {name:"bananas", quantity:500},
+  {name:"oranges", quantity:200},
+  {name:"kiwi", quantity:150}
+];
+
+function myCallback(quantity){
+  return quantity > 200 ? "ok" : "not ok";
+}
+const result = Object.groupBy(fruits, myCallback);
+let text="fruits that have quantity more than 200 are: ";
+for (let key in result.ok){
+  text += result.ok[key].name + " ";
+}
+
+
+//object prevention 
+//using const you cannot reassign the object but you can change the properties of the object add, modify and delete 
+
+
